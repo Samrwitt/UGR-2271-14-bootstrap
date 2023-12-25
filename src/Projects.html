@@ -1,88 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-  </head>
-  <body>
-    <nav>
-      <div class="logo">
-        <a href="./index.html">
-          <img src="../images/logo.jpg" alt="My Logo" />
-        </a>
-      </div>
-      <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Projects.html">Projects</a>
-      <a href="Services.html">Services</a>
-      <a href="Contact.html">Contact</a>
-    </nav>
-    <br />
-    <main id="Services">
-      <h1>Projects</h1>
-      <p>
-        These are few of the projects I have worked on in the past few years as
-        desinger and programmer. Take a look for yourself and see what kinda
-        work you should expect if you decide to work with me. <br />
-        Enjoy!
-      </p>
-      <div class="carousel">
-        <div class="slide">
-          <img src="../images/project1.jpg" alt="Image 1" />
-          <div class="slide-content">
-            <h3>Cloned instagram</h3>
-            <p>
-              This is a project where i cloned instagram using react and node.js
-            </p>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="../images/project2.jpg" alt="Image 1" />
-          <div class="slide-content">
-            <h3>Logo competition</h3>
-            <p>
-              This is a project I competed in a logo set competition in Art
-              challenge.
-            </p>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="../images/project3.png" alt="Image 1" />
-          <div class="slide-content">
-            <h3>Space invader game</h3>
-            <p>
-              This is a game I built using Java and Kotlin. You can find this in
-              play store.
-            </p>
-          </div>
-        </div>
-      </div>
 
-      <div class="controls">
-        <button onclick="prevImage()">Previous</button>
-        <button onclick="nextImage()">Next</button>
-      </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects</title>
+    <link
+    rel="stylesheet"
+    href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+  />
+</head>
+
+<body class="font-sans">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container d-flex">
+            <div class="navbar__logo w-50">
+                <a href="index.html">
+                    <img src="images/logo.jpg" alt="My Logo" class="w-50 h-10" />
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleMenu()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="projects mt-8 p-4 text-center">
+        <h1 class="projects__title text-3xl font-semibold mb-4">Projects</h1>
+        <p class="projects__description mt-4">
+            These are a few of the projects I have worked on in the past few years as
+            a designer and programmer. Take a look for yourself and see what kind of
+            work you should expect if you decide to work with me. <br />
+            Enjoy!
+        </p>
+
+        <div id="carouselExampleControls" class="carousel mt-8 max-w-lg mx-auto">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/project1.jpg" class="d-block w-100" alt="Image 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="carousel__slide-title text-xl font-semibold">Cloned Instagram</h3>
+                        <p class="carousel__slide-description">
+                            This is a project where I cloned Instagram using React and Node.js.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/project2.jpg" class="d-block w-100" alt="Image 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="carousel__slide-title text-xl font-semibold">Logo Competition</h3>
+                        <p class="carousel__slide-description">
+                            This is a project I competed in a logo set competition in Art challenge.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/project3.png" class="d-block w-100" alt="Image 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="carousel__slide-title text-xl font-semibold">Space Invader Game</h3>
+                        <p class="carousel__slide-description">
+                            This is a game I built using Java and Kotlin. You can find this in play store.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#" role="button" onclick="prevSlide()">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#" role="button" onclick="nextSlide()">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </main>
-    <hr />
-    <footer>
-      <div class="social-icons">
-        <a href="https://www.github.com/samrwitt" target="_blank"
-          ><img src="../images/github.jpg" alt="GitHub"
-        /></a>
-        <a href="https://t.me/Fumble_wit" target="_blank"
-          ><img src="../images/telegram.png" alt="Telegram"
-        /></a>
-        <a
-          href="https://et.linkedin.com/in/samrawit-tesfay-20a404283"
-          target="_blank"
-          ><img src="../images/linkedin.png" alt="linkedin"
-        /></a>
-        <a href="mailto:samrawitkta@gmail.com" target="_blank"
-          ><img src="../images/Gmail_icon.png" alt="gmail"
-        /></a>
-      </div>
-      <p>Made by Samrwit.K</p>
-      <p>&copy; 2023 Your Website. All rights reserved.</p>
+
+    <hr class="mt-8" />
+
+    <footer class="mt-8 p-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="d-flex mb-3 col-md-4 text-center text-md-left">
+                    <a href="https://www.github.com/samrwitt" target="_blank" class="text-white mr-3 d-block d-md-inline">
+                        <img src="images/github.jpg" alt="GitHub" class="img-fluid w-25"/>
+                    </a>
+                    <a href="https://t.me/Fumble_wit" target="_blank" class="text-white mr-3 d-block d-md-inline">
+                        <img src="images/telegram.png" alt="Telegram" class="img-fluid w-25" />
+                    </a>
+                    <a href="https://et.linkedin.com/in/samrawit-tesfay-20a404283" target="_blank" class="text-white mr-3 d-block d-md-inline">
+                        <img src="images/linkedin.png" alt="LinkedIn" class="img-fluid w-25" />
+                    </a>
+                    <a href="mailto:samrawitkta@gmail.com" target="_blank" class="text-white d-block d-md-inline">
+                        <img src="images/Gmail_icon.png" alt="Gmail" class="img-fluid w-25" />
+                    </a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p>&copy; 2023 Your Website. All rights reserved.</p>
+                </div>
+                <div class="col-md-4 text-center text-md-right">
+                    <p>Made by Samrwit.K</p>
+                </div>
+            </div>
+        </div>
     </footer>
-  </body>
+    <script src="js/script.js"></script>
+
+</body>
+
 </html>
