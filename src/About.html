@@ -1,102 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <title>Your Website</title>
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About</title>
+    <link
+    rel="stylesheet"
+    href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+  />
+    
+</head>
 
-  <body>
-    <nav>
-      <div class="logo">
-        <a href="./index.html">
-          <img src="../images/logo.jpg" alt="My Logo" />
-        </a>
-      </div>
-      <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Projects.html">Projects</a>
-      <a href="Services.html">Services</a>
-      <a href="Contact.html">Contact</a>
+<body class="font-sans">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container d-flex">
+            <div class="navbar__logo w-50">
+                <a href="index.html">
+                    <img src="images/logo.jpg" alt="My Logo" class="w-50 h-10" />
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleMenu()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <br />
 
-    <main id="about">
-      <h1>About Me</h1>
-      <div id="AboutParagraph">
-        <div>
-          <p>
-            Hi there! I'm Samrawit, a software engineering student currently
-            immersed in the fascinating world of coding and problem-solving. As
-            I delve deeper into this ever-evolving field, I'm captivated by the
-            endless possibilities it holds for creating innovative solutions
-            that shape our digital landscape.
-          </p>
-          <ul>
-            <li>logo designing</li>
-            <li>illustration</li>
-            <li>Website designing</li>
-            <li>app development</li>
-            <li>bot development</li>
-            <li>algorithm writing</li>
-          </ul>
+    <main class="about p-8">
+        <h1 class="about__title text-4xl font-bold mb-4 text-center">About Me</h1>
+        <div class="about__content row align-items-center justify-content-center text-center">
+            <div class="about__paragraph col-md-6 mb-4 mt-4 order-md-1 order-2">
+                <p class="about__text-lg">
+                    Hi there! I'm Samrawit, a software engineering student currently
+                    immersed in the fascinating world of coding and problem-solving. As
+                    I delve deeper into this ever-evolving field, I'm captivated by the
+                    endless possibilities it holds for creating innovative solutions
+                    that shape our digital landscape.
+                </p>
+                
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <ul class="about__list pl-4 mb-0">
+                            <li class="mb-2">Logo designing</li>
+                            <li class="mb-2">Illustration</li>
+                            <li class="mb-2">Website designing</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="about__list list-disc pl-4 mb-0">
+                            <li class="mb-2">App and bot development</li>
+                            <li class="mb-2">Algorithm writing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="about__image col-md-6 order-md-2 order-1">
+                <img src="images/AvatarMaker.png" alt="Description of the image" class="w-50 h-auto" />
+            </div>
         </div>
-        <div id="AboutImg">
-          <img src="../images/avatarmaker.png" alt="Description of the image" />
-        </div>
-      </div>
-      <h2>Certificates</h2>
-      <div class="card-container">
-        <div class="card">
-          <img src="../images/certimage1.jpg" alt="Image" class="card-image" />
-          <h2>Red hat Administration</h2>
-          <p>
-            certificate of recognition from Red hat on sytem admintstration.
-          </p>
-          <a href="../images/cert1.jpg"> see certificate </a>
-        </div>
-        <div class="card">
-          <img src="../images/certimage2.jpg" alt="Image" class="card-image" />
-          <h2>Networking</h2>
-          <p>
-            Certificate of recognition from cisco academy on networking
-            essential.
-          </p>
-          <a href="../images/cert2.jpg"> see certificate </a>
-        </div>
-        <div class="card">
-          <img src="../images/certimage3.png" alt="Image" class="card-image" />
-          <h2>Time managment</h2>
-          <p>
-            Certificate of recognition from udemy on mastering time managment.
-          </p>
-        </div>
-      </div>
+        
+        
 
-      <div class="navigation">
-        <button onclick="prevCard()">Previous</button>
-        <button onclick="nextCard()">Next</button>
-      </div>
+        <h1 class="about__certificates-title text-4xl font-bold mt-8 mb-4 text-center">Certificates</h1>
+        <div class="about__card-container card-container row overflow-x-auto d-flex flex-nowrap text-center">
+            <div class="about__card card bg-white border border-gray-300 col-md-4 mb-4 ">
+                <img src="images/certimage1.jpg" alt="Image" class="card-img-top" />
+                <div class="card-body">
+                    <h2 class="card-title text-lg font-semibold mt-4">Red hat Administration</h2>
+                    <p class="card-text">
+                        Certificate of recognition from Red hat on system administration.
+                    </p>
+                    <a href="images/cert1.jpg" class="card-link text-blue-500">See certificate</a>
+                </div>
+            </div>
+            <div class="about__card card bg-white border border-gray-300 col-md-4 mb-4">
+                <img src="images/certimage2.jpg" alt="Image" class="card-img-top" />
+                <div class="card-body">
+                    <h2 class="card-title text-lg font-semibold mt-4">Networking</h2>
+                    <p class="card-text">
+                        Certificate of recognition from Cisco academy on networking essentials.
+                    </p>
+                    <a href="images/cert2.jpg" class="card-link text-blue-500">See certificate</a>
+                </div>
+            </div>
+            <div class="about__card card bg-white border border-gray-300 col-md-4 mb-4">
+                <img src="images/certimage3.png" alt="Image" class="card-img-top" />
+                <div class="card-body">
+                    <h2 class="card-title text-lg font-semibold mt-4">Time management</h2>
+                    <p class="card-text">
+                        Certificate of recognition from Udemy on mastering time management.
+                    </p>
+                </div>
+            </div>
+        </div>
     </main>
-    <hr />
-    <footer>
-      <div class="social-icons">
-        <a href="https://www.github.com/samrwitt" target="_blank"
-          ><img src="../images/github.jpg" alt="GitHub"
-        /></a>
-        <a href="https://t.me/Fumble_wit" target="_blank"
-          ><img src="../images/telegram.png" alt="Telegram"
-        /></a>
-        <a
-          href="https://et.linkedin.com/in/samrawit-tesfay-20a404283"
-          target="_blank"
-          ><img src="../images/linkedin.png" alt="linkedin"
-        /></a>
-        <a href="mailto:samrawitkta@gmail.com" target="_blank"
-          ><img src="../images/Gmail_icon.png" alt="gmail"
-        /></a>
-      </div>
-      <p>Made by Samrwit.K</p>
-      <p>&copy; 2023 Your Website. All rights reserved.</p>
+
+    <footer class="mt-8 p-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="d-flex mb-3 col-md-4 text-center text-md-left">
+                    <a href="https://www.github.com/samrwitt" target="_blank" class="text-white mr-3 d-block d-md-inline">
+                        <img src="images/github.jpg" alt="GitHub" class="img-fluid w-25"/>
+                    </a>
+                    <a href="https://t.me/Fumble_wit" target="_blank" class="text-white mr-3 d-block d-md-inline">
+                        <img src="images/telegram.png" alt="Telegram" class="img-fluid w-25" />
+                    </a>
+                    <a href="https://et.linkedin.com/in/samrawit-tesfay-20a404283" target="_blank" class="text-white mr-3 d-block d-md-inline">
+                        <img src="images/linkedin.png" alt="LinkedIn" class="img-fluid w-25" />
+                    </a>
+                    <a href="mailto:samrawitkta@gmail.com" target="_blank" class="text-white d-block d-md-inline">
+                        <img src="images/Gmail_icon.png" alt="Gmail" class="img-fluid w-25" />
+                    </a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p>&copy; 2023 Your Website. All rights reserved.</p>
+                </div>
+                <div class="col-md-4 text-center text-md-right">
+                    <p>Made by Samrwit.K</p>
+                </div>
+            </div>
+        </div>
     </footer>
-  </body>
+    
+    <script src="js/script.js"></script>
+
+</body>
+
 </html>
